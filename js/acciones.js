@@ -1,5 +1,5 @@
 // JavaScript Document
-$(document).ready(function(e) {
+$(document).ready(function (e) {
     
 	
 	var watchID=null;
@@ -20,16 +20,19 @@ $(document).ready(function(e) {
 	}
 	function Detener(){
 		if (watchID){
-			navigator.accelerometer.clearWatch (watchID);
-			watchID=null
+			navigator .accelerometer.clearWatch (watchID);
+			watchID=null;
 		}
 	}
 	function Correcto(acceleration){
 		var element=document.getElementById('acelerometro');
+		
 		element.innerHTML='Aceleracion en X:'+acceleration.x+'<br/>'+'Aceleration en Y:'+acceleration.y+'<br/>'+'Intervalo:'+acceleration.timestamp+'<br/>';
 	}
-	
-	function Localizada(posicion){
+	function Error(){
+		alert('Error!');
+	}
+	function Localiza(posicion){
 		var element=document.getElementById('geolocalizacion');
 		element.innerHTML='Latitud:'+posicion.coords,latitude+'<br/>'+'Longitud:'+posicion.coords.longitude+'<br/>'+'Precision:'+posicion.coords.accuracy+'<br/>'+'Intervalo:'+posicion.timestamp+'<br/>'
 	}
